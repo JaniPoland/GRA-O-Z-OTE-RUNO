@@ -54,13 +54,13 @@
     <h1>Wskazówka </h1>
     <img src="biblioteka.png" alt=" wskazówka" />
     <div class="countdown">Przycisk pojawi się za: 5:00</div>
-    <a class="button" href="gpsbiblioteka.html">Przejdź do linku do mapy</a>
+    <a class="button" href="gpsbiblioteka.html">Przejdz do danych GPS aby szybciej dobrzeć na miejsce</a>
   </div>
 
   <script>
     const countdownElement = document.querySelector('.countdown');
     const button = document.querySelector('.button');
-    let timeLeft = 300; // 5 minut w sekundach
+    let timeLeft = 30; // 5 minut w sekundach
 
     const updateCountdown = () => {
       const minutes = Math.floor(timeLeft / 60);
