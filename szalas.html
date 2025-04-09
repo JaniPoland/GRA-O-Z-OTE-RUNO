@@ -46,11 +46,11 @@
 <body>
   <img src="szalas.png" alt="Szałas - wskazówka" />
   <div class="countdown">Przycisk z podpowiedzią pojawi się za: 5:00</div>
-  <a class="button" href="gpsszalas.html"> Przejdz do danych GPS aby szybciej dobrzeć na miejsce </a>
+  <a class="button" href="gpsszalas.html"> Przejdz do danych GPS aby szybciej dobrzeć na miejsce. Skopiuj link i wklej go do przeglądarki. </a>
 
   <script>
     const countdownElement = document.querySelector('.countdown');
-    let timeLeft = 300; // 5 minut = 300 sekund
+    let timeLeft = 30; // 5 minut = 300 sekund
 
     const updateCountdown = () => {
       const minutes = Math.floor(timeLeft / 60);
