@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wskazówka - Ogród Jordanek</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f1ee;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      max-width: 600px;
+    }
+    .poem {
+      margin-top: 15px;
+      white-space: pre-line;
+      font-style: italic;
+      color: #333;
+    }
+    .countdown {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #555;
+    }
+    .button {
+      margin-top: 15px;
+      padding: 12px 20px;
+      background-color: #b8860b;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+      display: none;
+    }
+    .button:hover {
+      background-color: #daa520;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Wskazówka: „Gdzie dziecięce śmiechy wznoszą się ku niebu”</h1>
+    <div class="poem">
+      Tam, gdzie wiatr śpiewa pieśń dawnych wód,
+      A tafla spokojna skrywa legendę bogów.
+      Jak niegdyś herosi w swej wielkiej wyprawie,
+      Przejdziesz ścieżką wśród szumu fal i sosen.
+
+      Skromna droga, lecz pewna niczym broń Ateny,
+      Przeniesie Cię dalej w podróży bez wahania.
+      Szukaj przejścia, gdzie drewno spotyka wodę,
+      A ślady przygód wiodą wprost przez wodną otchłań.
+
+      Idź odważnie przez wodne lustro,
+      A gdy znajdziesz się po przeciwnej stronie,
+      Spójrz pod konstrukcję — tam czeka kolejna wskazówka,
+      Gotowa, by poprowadzić Cię dalej w tej przygodzie!
+    </div>
+    <div class="countdown">Przycisk pojawi się za: 5:00</div>
+    <a class="button" href="gpsjordanek.html">Przejdź do kolejnego zadania</a>
+  </div>
+
+  <script>
+    const countdownElement = document.querySelector('.countdown');
+    const button = document.querySelector('.button');
+    let timeLeft = 300; // 5 minut w sekundach
+
+    const updateCountdown = () => {
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+      countdownElement.textContent = `Przycisk pojawi się za: ${minutes}:${seconds.toString().padStart(2, '0')}`;
+      if (timeLeft > 0) {
+        timeLeft--;
+      } else {
+        clearInterval(timerInterval);
+        button.style.display = 'inline-block';
+        countdownElement.style.display = 'none';
+      }
+    };
+
+    updateCountdown();
+    const timerInterval = setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
