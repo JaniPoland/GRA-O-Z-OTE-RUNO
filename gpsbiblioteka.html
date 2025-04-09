@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Koordynaty z Google Maps</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f1ee;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+    .link-box {
+      margin-top: 15px;
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-radius: 6px;
+      word-break: break-all;
+      cursor: pointer;
+    }
+    .copy-info {
+      margin-top: 10px;
+      color: green;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Skopiuj dane z Google Maps 📍</h1>
+    <p>Kliknij w poniższy link, aby go skopiować:</p>
+    <div class="link-box" id="linkBox">https://maps.app.goo.gl/e9he3tUmorZfZkrr7</div>
+    <div class="copy-info" id="copyInfo">✅ Link skopiowany do schowka! Otworz przegladarke i wklej link.</div>
+  </div>
+
+  <script>
+    const linkBox = document.getElementById('linkBox');
+    const copyInfo = document.getElementById('copyInfo');
+
+    linkBox.addEventListener('click', () => {
+      navigator.clipboard.writeText(linkBox.textContent).then(() => {
+        copyInfo.style.display = 'block';
+        setTimeout(() => {
+          copyInfo.style.display = 'none';
+        }, 2000);
+      });
+    });
+  </script>
+</body>
+</html>
