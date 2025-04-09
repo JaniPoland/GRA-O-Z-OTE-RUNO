@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wskazówka - Sklepowa Tajemnica</title>
+  <title>Wskazówka</title>
   <style>
     body {
       margin: 0;
@@ -65,13 +65,13 @@
       Ruszysz w swą drogę i przygodę odważnie!
     </div>
     <div class="countdown">Przycisk pojawi się za: 5:00</div>
-    <a class="button" href="gpssklep.html">Przejdź do kolejnego zadania</a>
+    <a class="button" href="gpssklep.html">Przejdz do danych GPS aby szybciej dobrzeć na miejsce</a>
   </div>
 
   <script>
     const countdownElement = document.querySelector('.countdown');
     const button = document.querySelector('.button');
-    let timeLeft = 300; // 5 minut w sekundach
+    let timeLeft = 30; // 5 minut w sekundach
 
     const updateCountdown = () => {
       const minutes = Math.floor(timeLeft / 60);
